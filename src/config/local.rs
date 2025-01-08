@@ -25,8 +25,6 @@ pub struct LocalConfiguration {
     pub postgres_url: String,
     #[serde(default = "default_postgres_max_connections")]
     pub postgres_max_connections: u32,
-    #[serde(default = "default_redis_url")]
-    pub redis_url: String,
     #[serde(default = "default_keypair_seed")]
     pub keypair_seed: String,
     #[serde(default = "default_relay_url")]
@@ -51,10 +49,6 @@ fn default_log_level() -> String {
 
 pub fn default_postgres_url() -> String {
     "postgres://postgres:postgres@localhost:5432/postgres".to_owned()
-}
-
-pub fn default_redis_url() -> String {
-    "redis://localhost:6378/0".to_owned()
 }
 
 pub fn default_postgres_max_connections() -> u32 {
